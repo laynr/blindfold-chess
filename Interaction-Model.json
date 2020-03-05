@@ -1,0 +1,852 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "blindfold chess",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "MoveIntent",
+                    "slots": [
+                        {
+                            "name": "from_coordinate",
+                            "type": "coordinate",
+                            "samples": [
+                                "{from_coordinate}"
+                            ]
+                        },
+                        {
+                            "name": "to_coordinate",
+                            "type": "coordinate",
+                            "samples": [
+                                "{to_coordinate}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "{from_coordinate} {to_coordinate}",
+                        "{from_coordinate} to {to_coordinate}",
+                        "from {from_coordinate} to {to_coordinate}",
+                        "from {from_coordinate} {to_coordinate}",
+                        "move from {from_coordinate} {to_coordinate}",
+                        "move from {from_coordinate} to {to_coordinate}",
+                        "move my castle from {from_coordinate} to {to_coordinate}",
+                        "move my knight from {from_coordinate} to {to_coordinate}",
+                        "move my bishop from {from_coordinate} to {to_coordinate}",
+                        "move my rook from {from_coordinate} to {to_coordinate}",
+                        "move my queen from {from_coordinate} to {to_coordinate}",
+                        "move my king from {from_coordinate} to {to_coordinate}",
+                        "move my pawn from {from_coordinate} to {to_coordinate}",
+                        "from the {from_coordinate} square to {to_coordinate} square",
+                        "from square {from_coordinate} to square {to_coordinate}",
+                        "square {from_coordinate} to square {to_coordinate}",
+                        "move my piece located at {from_coordinate} to the {to_coordinate} square",
+                        "move {from_coordinate} to {to_coordinate}",
+                        "move {from_coordinate} {to_coordinate}"
+                    ]
+                },
+                {
+                    "name": "NewGameIntent",
+                    "slots": [
+                        {
+                            "name": "level",
+                            "type": "AMAZON.NUMBER",
+                            "samples": [
+                                "use stockfish level {level}",
+                                "make my opponent level {level}",
+                                "level {level}",
+                                "skill level {level}",
+                                "{level}",
+                                "I want to play a skill level {level} game"
+                            ]
+                        },
+                        {
+                            "name": "player",
+                            "type": "AMAZON.Color",
+                            "samples": [
+                                "let me be {player}",
+                                "I want to move the {player} pieces",
+                                "I will be {player}",
+                                "{player}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "set up a new board",
+                        "start chess match",
+                        "set up a new chess game",
+                        "clear the board",
+                        "clear the board and start over",
+                        "end this game and start a new game",
+                        "start a new game where I move the {player} pieces",
+                        "new game I am  {player} ",
+                        "new game where I move the {player} pieces",
+                        "start a new level {level} game",
+                        "start a new game at {level}",
+                        "start a new game at {level} i'll be {player}",
+                        "start a new level {level} game i'll be {player}",
+                        "start a new game",
+                        "end this game",
+                        "new game",
+                        "start over"
+                    ]
+                },
+                {
+                    "name": "AcknowledgementIntent",
+                    "slots": [],
+                    "samples": [
+                        "is this under the the Creative Commons license",
+                        "is this under the GPL license",
+                        "are these the Sinfonias by Back",
+                        "is this Bach",
+                        "is this Johann Sebastian Bach",
+                        "is this using the python chess library",
+                        "is this using the stockfish chess engine",
+                        "what chess engine are you using",
+                        "was open source software used to make this game",
+                        "what license is this under",
+                        "who made this game",
+                        "what song is this",
+                        "who is playing this song",
+                        "list acknowledgements",
+                        "list the acknowledgements"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "coordinate",
+                    "values": [
+                        {
+                            "id": "a1",
+                            "name": {
+                                "value": "a. one",
+                                "synonyms": [
+                                    "alpha one"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "b1",
+                            "name": {
+                                "value": "b. one",
+                                "synonyms": [
+                                    "bravo one"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "c1",
+                            "name": {
+                                "value": "c. one",
+                                "synonyms": [
+                                    "charlie one"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "d1",
+                            "name": {
+                                "value": "d. one",
+                                "synonyms": [
+                                    "delta one"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "e1",
+                            "name": {
+                                "value": "e. one",
+                                "synonyms": [
+                                    "echo one"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "f1",
+                            "name": {
+                                "value": "f. one",
+                                "synonyms": [
+                                    "foxtrot one"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "g1",
+                            "name": {
+                                "value": "g. one",
+                                "synonyms": [
+                                    "golf one"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "h1",
+                            "name": {
+                                "value": "h. one",
+                                "synonyms": [
+                                    "hotel one"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "a2",
+                            "name": {
+                                "value": "a. two",
+                                "synonyms": [
+                                    "alpha two"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "b2",
+                            "name": {
+                                "value": "b. two",
+                                "synonyms": [
+                                    "bravo two"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "c2",
+                            "name": {
+                                "value": "c. two",
+                                "synonyms": [
+                                    "charlie two"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "d2",
+                            "name": {
+                                "value": "d. two",
+                                "synonyms": [
+                                    "delta two"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "e2",
+                            "name": {
+                                "value": "e. two",
+                                "synonyms": [
+                                    "echo two"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "f2",
+                            "name": {
+                                "value": "f. two",
+                                "synonyms": [
+                                    "foxtrot two"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "g2",
+                            "name": {
+                                "value": "g. two",
+                                "synonyms": [
+                                    "golf two"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "h2",
+                            "name": {
+                                "value": "h. two",
+                                "synonyms": [
+                                    "hotel two"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "a3",
+                            "name": {
+                                "value": "a. three",
+                                "synonyms": [
+                                    "alpha three"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "b3",
+                            "name": {
+                                "value": "b. three",
+                                "synonyms": [
+                                    "bravo three"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "c3",
+                            "name": {
+                                "value": "c. three",
+                                "synonyms": [
+                                    "charlie three"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "d3",
+                            "name": {
+                                "value": "d. three",
+                                "synonyms": [
+                                    "delta three"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "e3",
+                            "name": {
+                                "value": "e. three",
+                                "synonyms": [
+                                    "echo three"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "f3",
+                            "name": {
+                                "value": "f. three",
+                                "synonyms": [
+                                    "foxtrot three"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "g3",
+                            "name": {
+                                "value": "g. three",
+                                "synonyms": [
+                                    "golf three"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "h3",
+                            "name": {
+                                "value": "h. three",
+                                "synonyms": [
+                                    "hotel three"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "a4",
+                            "name": {
+                                "value": "a. four",
+                                "synonyms": [
+                                    "alpha four"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "b4",
+                            "name": {
+                                "value": "b. four",
+                                "synonyms": [
+                                    "bravo four"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "c4",
+                            "name": {
+                                "value": "c. four",
+                                "synonyms": [
+                                    "charlie four"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "d4",
+                            "name": {
+                                "value": "d. four",
+                                "synonyms": [
+                                    "delta four"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "e4",
+                            "name": {
+                                "value": "e. four",
+                                "synonyms": [
+                                    "echo four"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "f4",
+                            "name": {
+                                "value": "f. four",
+                                "synonyms": [
+                                    "foxtrot four"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "g4",
+                            "name": {
+                                "value": "g. four",
+                                "synonyms": [
+                                    "golf four"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "h4",
+                            "name": {
+                                "value": "h. four",
+                                "synonyms": [
+                                    "hotel four"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "a5",
+                            "name": {
+                                "value": "a. five",
+                                "synonyms": [
+                                    "alpha five"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "b5",
+                            "name": {
+                                "value": "b. five",
+                                "synonyms": [
+                                    "bravo five"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "c5",
+                            "name": {
+                                "value": "c. five",
+                                "synonyms": [
+                                    "charlie five"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "d5",
+                            "name": {
+                                "value": "d. five",
+                                "synonyms": [
+                                    "delta five"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "e5",
+                            "name": {
+                                "value": "e. five",
+                                "synonyms": [
+                                    "echo five"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "f5",
+                            "name": {
+                                "value": "f. five",
+                                "synonyms": [
+                                    "foxtrot five"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "g5",
+                            "name": {
+                                "value": "g. five",
+                                "synonyms": [
+                                    "golf five"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "h5",
+                            "name": {
+                                "value": "h. five",
+                                "synonyms": [
+                                    "hotel five"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "a6",
+                            "name": {
+                                "value": "a. six",
+                                "synonyms": [
+                                    "alpha six"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "b6",
+                            "name": {
+                                "value": "b. six",
+                                "synonyms": [
+                                    "bravo six"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "c6",
+                            "name": {
+                                "value": "c. six",
+                                "synonyms": [
+                                    "charlie six"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "d6",
+                            "name": {
+                                "value": "d. six",
+                                "synonyms": [
+                                    "delta six"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "e6",
+                            "name": {
+                                "value": "e. six",
+                                "synonyms": [
+                                    "echo six"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "f6",
+                            "name": {
+                                "value": "f. six",
+                                "synonyms": [
+                                    "foxtrot six"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "g6",
+                            "name": {
+                                "value": "g. six",
+                                "synonyms": [
+                                    "golf six"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "h6",
+                            "name": {
+                                "value": "h. six",
+                                "synonyms": [
+                                    "hotel six"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "a7",
+                            "name": {
+                                "value": "a. seven",
+                                "synonyms": [
+                                    "alpha seven"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "b7",
+                            "name": {
+                                "value": "b. seven",
+                                "synonyms": [
+                                    "bravo seven"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "c7",
+                            "name": {
+                                "value": "c. seven",
+                                "synonyms": [
+                                    "charlie seven"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "d7",
+                            "name": {
+                                "value": "d. seven",
+                                "synonyms": [
+                                    "delta seven"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "e7",
+                            "name": {
+                                "value": "e. seven",
+                                "synonyms": [
+                                    "echo seven"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "f7",
+                            "name": {
+                                "value": "f. seven",
+                                "synonyms": [
+                                    "foxtrot seven"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "g7",
+                            "name": {
+                                "value": "g. seven",
+                                "synonyms": [
+                                    "golf seven"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "h7",
+                            "name": {
+                                "value": "h. seven",
+                                "synonyms": [
+                                    "hotel seven"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "a8",
+                            "name": {
+                                "value": "a. eight",
+                                "synonyms": [
+                                    "alpha eight"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "b8",
+                            "name": {
+                                "value": "b. eight",
+                                "synonyms": [
+                                    "bravo eight"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "c8",
+                            "name": {
+                                "value": "c. eight",
+                                "synonyms": [
+                                    "charlie eight"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "d8",
+                            "name": {
+                                "value": "d. eight",
+                                "synonyms": [
+                                    "delta eight"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "e8",
+                            "name": {
+                                "value": "e. eight",
+                                "synonyms": [
+                                    "echo eight"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "f8",
+                            "name": {
+                                "value": "f. eight",
+                                "synonyms": [
+                                    "foxtrot eight"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "g8",
+                            "name": {
+                                "value": "g. eight",
+                                "synonyms": [
+                                    "golf eight"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "h8",
+                            "name": {
+                                "value": "h. eight",
+                                "synonyms": [
+                                    "hotel eight"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "NewGameIntent",
+                    "delegationStrategy": "ALWAYS",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "level",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1556321774469.636236841656"
+                            }
+                        },
+                        {
+                            "name": "player",
+                            "type": "AMAZON.Color",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1556321774469.974736745379"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "MoveIntent",
+                    "delegationStrategy": "ALWAYS",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "from_coordinate",
+                            "type": "coordinate",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.206875938959.654396367871"
+                            },
+                            "validations": [
+                                {
+                                    "type": "hasEntityResolutionMatch",
+                                    "prompt": "Slot.Validation.1527861742707.1348797720196.851633346798"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "to_coordinate",
+                            "type": "coordinate",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.206875938959.1105294746886"
+                            },
+                            "validations": [
+                                {
+                                    "type": "hasEntityResolutionMatch",
+                                    "prompt": "Slot.Validation.1527861742707.561953253060.1218621352498"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.1556321774469.636236841656",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Level one is the easiest and level twenty is the hardest.  What level do you want to play?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1556321774469.974736745379",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Do you want to be black or white?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "What color do you want to be?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "According to the rules of chess, the player who moves the first piece is referred to as  'white', and the player who moves the second piece is referred to as 'black'.  What color do you want to be?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.206875938959.654396367871",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Where is the piece currently?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.206875938959.1105294746886",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Where do you want to move the piece?"
+                    }
+                ]
+            },
+            {
+                "id": "Slot.Validation.1527861742707.1348797720196.851633346798",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "{from_coordinate} is not a valid chess board coordinate. What are the chess board coordinates of the piece you want to move?"
+                    }
+                ]
+            },
+            {
+                "id": "Slot.Validation.1527861742707.561953253060.1218621352498",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "{to_coordinate} is not a valid chess board coordinate. What are the chess board coordinates of the space you want to move the piece to?"
+                    }
+                ]
+            }
+        ]
+    }
+}
