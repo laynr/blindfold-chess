@@ -10,9 +10,9 @@ table    = dynamodb.Table('chess')
 
 # Copy engine to temp and set permissions to 755
 import os, sys, stat, shutil
-shutil.copyfile("./stockfish_10_x64", "/tmp/stockfish_10_x64")
-os.chmod('/tmp/stockfish_10_x64', 0o755)
-engine = chess.engine.SimpleEngine.popen_uci("/tmp/stockfish_10_x64")
+shutil.copyfile("./stockfish_20011801_x64", "/tmp/stockfish_20011801_x64")
+os.chmod('/tmp/stockfish_20011801_x64', 0o755)
+engine = chess.engine.SimpleEngine.popen_uci("/tmp/stockfish_20011801_x64")
 
 # Globals
 userId = False
@@ -154,6 +154,7 @@ def is_game_over_commentary():
     elif board.is_insufficient_material():
         commentary = "Game ends in draw due to insufficient material."
 
+    print(commentary)
     commentary += 'Say, "start new game", to play again!'
     return commentary    
 
@@ -383,6 +384,20 @@ def acknowledgement_intent(intent):
 # Required Intents
 def help_intent(intent):
     print('help_intent')
+    content = "Sorry, your voice command was not recognized.  Please try again. What do you want to do?"
+    return build_response(
+        build_speechlet_response(
+            card_title = "Voice command not recognized.",
+            card_content = content,
+            speech_output = content,
+            reprompt_text = "You can Say 'start a new game', or move a piece by saying the cordinates of where the piece currently is, followed by the cordinates of where you want the piece to go to.  Or if you need help say, 'Alexa, help'.  What do you want to do?",
+            should_end_session = False
+        ),
+        session_attributes = {'a':'apple'}
+    )
+
+def fallback_intent(intent):
+    print('fallback_intent')
     content = '{} What do you want to do?'.format(speech_help)
     return build_response(
         build_speechlet_response(
@@ -466,7 +481,7 @@ def on_intent(request):
 
     # Required Intents
     if intentName == 'AMAZON.FallbackIntent':
-        return help_intent(intent)
+        return fallback_intent(intent)
 
     if intentName == "AMAZON.HelpIntent":
         return help_intent(intent)

@@ -17,7 +17,7 @@ cd package
 zip -r9 ../function.zip .
 cd ..
 zip -g function.zip lambda_function.py
-zip -g function.zip stockfish_10_x64  <-- download Stockfish for Linux at https://stockfishchess.org/download/ 
+zip -g function.zip stockfish_20011801_x64  <-- download latests Stockfish for Linux at https://stockfishchess.org/download/ 
 ```
 ### Code:
 Upload 'function.zip' to https://console.aws.amazon.com/lambda
