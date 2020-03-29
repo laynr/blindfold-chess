@@ -19,18 +19,18 @@ cd ..
 zip -g function.zip lambda_function.py
 zip -g function.zip stockfish_20011801_x64  <-- download latests Stockfish for Linux at https://stockfishchess.org/download/ 
 ```
-### Code:
-Upload 'function.zip' to https://console.aws.amazon.com/lambda
-Upload 'Interaction-Model.json' to https://developer.amazon.com/alexa/console/ask
+Code:
+* Upload 'function.zip' to https://console.aws.amazon.com/lambda
+* Upload 'Interaction-Model.json' to https://developer.amazon.com/alexa/console/ask
 
-### Database:
-Create 'chess' database table at https://console.aws.amazon.com/dynamodb/home
+Database:
+* Create 'chess' database table at https://console.aws.amazon.com/dynamodb/home
 
-### Media:
-Create 'blindfold-chess' bucket for media at https://s3.console.aws.amazon.com/s3/home
-Music files have been downloaded from: https://en.wikipedia.org/wiki/Inventions_and_Sinfonias_(Bach)
-Converted from ogg to mp3 with ffmpeg: ffmpeg -i Bach_Sinfonien16.ogg -ac 2 -codec:a libmp3lame -b:a 48k -ar 24000 -write_xing 0 Bach_Sinfonien16.mp3
-Hosted at: https://blindfold-chess.s3.amazonaws.com/Bach_Sinfonien01.mp3
+Media:
+* Create 'blindfold-chess' bucket for media at https://s3.console.aws.amazon.com/s3/home
+* Music files have been downloaded from: https://en.wikipedia.org/wiki/Inventions_and_Sinfonias_(Bach)
+* Converted from ogg to mp3 with ffmpeg: ```bashffmpeg -i Bach_Sinfonien16.ogg -ac 2 -codec:a libmp3lame -b:a 48k -ar 24000 -write_xing 0 Bach_Sinfonien16.mp3```
+* Hosted at: https://blindfold-chess.s3.amazonaws.com/Bach_Sinfonien01.mp3
 
 ## Usage
 "Alexa, open blindfold chess"
@@ -50,12 +50,9 @@ Please make sure to update tests as appropriate.
 
 ## Acknowledgements
 This skill has benefited greatly from the use of open source software and creative commons media. We specifically acknowledge, with thanks, the producers of the following:
-
-The python-chess library, licensed under GPL 3. 
-
-The Stockfish Open Source Chess Engine, licensed under GPL 3. 
-
-Johann Sebastian Bach's Sinfonias where played on the piano by Randolph Hokanson, licensed under Creative Commons Attribution-Share Alike 2.0.
+* The python-chess library, licensed under GPL 3. 
+* The Stockfish Open Source Chess Engine, licensed under GPL 3. 
+* Johann Sebastian Bach's Sinfonias where played on the piano by Randolph Hokanson, licensed under Creative Commons Attribution-Share Alike 2.0.
 
 ## License
 blindfold-chess is licensed under the GPL 3 (or any later version at your option). Check out LICENSE.txt for the full text.
