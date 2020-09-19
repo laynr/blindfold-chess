@@ -155,7 +155,7 @@ def is_game_over_commentary():
         commentary = "Game ends in draw due to insufficient material."
 
     print(commentary)
-    commentary += 'Say, "start new game", to play again!'
+    commentary += 'Say, "Alexa, start new game", to play again!'
     return commentary    
 
 def answer_move(from_coordinate, to_coordinate):
@@ -175,7 +175,12 @@ def answer_move(from_coordinate, to_coordinate):
     if is_uci_move_legal(uci):
         user_move_commentary     = 'okay, {} moves {}.'.format(who(board.turn), legal_move_commentary(uci))
         print('{} moves: {}'.format(who(board.turn), legal_move_commentary(uci)))
-        board.push_uci(uci)
+        #board.push_uci(uci)
+        move = board.find_move((getattr(chess, from_coordinate.upper())), (getattr(chess, to_coordinate.upper())))
+        if move.promotion:
+            user_move_commentary += ' defaulting to queen promotion'
+            print('defaulting to queen promotion')
+        board.push(move)
         save_game_state(board, white, black, skill_level)
         if board.is_game_over():
             commentary = is_game_over_commentary()
@@ -195,6 +200,9 @@ def answer_move(from_coordinate, to_coordinate):
         commentary += '{} {} {}'.format(user_move_commentary, computer_move_commentary, prompt)
 
     else:
+        if board.is_game_over():
+            commentary = is_game_over_commentary()
+            return commentary
         commentary += not_legal_move_commentary(from_coordinate, to_coordinate)
 
     return commentary
